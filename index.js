@@ -2,16 +2,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require ('mongoose')
-
-
-
-
-
-
 const app = express();
+const formSchema =require('./models/formModel')
+
+
+
+
+
+app.set('view engine','pug');
+app.set('views' , './views');
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended: true}))
+
+//importing routes
+const formRoutes = require('./routes/formroutes')
+
 
 //connect to the database
-mongoose.connect('mongodb+srv://Eddie:9zaVVkLayDzdxilf@refactory.gdjen.mongodb.net/coviddb?retryWrites=true&w=majority'
+mongoose.connect('mongodb+srv://Eddie:9zaVVkLayDzdxilf@refactory.gdjen.mongodb.net/formdb?retryWrites=true&w=majority'
 ,{
     useCreateIndex: true,
     useNewUrlParser: true,
@@ -20,15 +28,14 @@ mongoose.connect('mongodb+srv://Eddie:9zaVVkLayDzdxilf@refactory.gdjen.mongodb.n
 })
 
 mongoose.connection.on('connected',() => {
-    console.log('mongooe!!!')
+    console.log('mongoose!!!')
 })
 
+//using routes
+app.use('/form',formRoutes)
 
-app.set('view engine','pug');
-app.set('views' , './views');
 
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: true}))
+
 
 
     

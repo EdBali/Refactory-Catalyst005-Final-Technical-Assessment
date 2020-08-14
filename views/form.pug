@@ -12,7 +12,7 @@ html(lang="en")
 
                     .col-6.offset-3
                         .form-container(style="border: 2px solid grey")
-                            form(action="" name="contactForm")
+                            
                                 .logo
                                     .container
                                         .row
@@ -28,7 +28,7 @@ html(lang="en")
                                             .col.offset-2
                                                 h4 Virus-Test Registration Form
                                 .form
-                                    form(action="" onsubmit="validateForm()")
+                                    form(action="/form/add" method="POST" onsubmit="validateForm()" name="contactForm")
                                         .container
                                             .row
                                                 .col-6
@@ -81,7 +81,12 @@ html(lang="en")
                                             .row
                                                 .col-12
                                                     label(for="category") Category
-                                                    input(type="text" name="category")
+                                                    select(id="category" class="form-control" name="category")
+                                                        option(selected value="") Select Category
+                                                        option(selected value="") Returnee
+                                                        option(selected value="") Contact
+                                                        option(selected value="") Alert
+                                                        option(selected value="") Volunteer
                                                     <div class="error" id="categoryErr"></div>
                                             .row
                                                 .col-4.offset-8
