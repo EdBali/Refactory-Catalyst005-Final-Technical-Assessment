@@ -1,0 +1,91 @@
+doctype html 
+html(lang="en")
+    head
+        link(rel="stylesheet" type="text" href="/bootstrap/css/bootstrap.css")
+        link(rel="stylesheet" href="/css/product_card.css")
+        link(rel="stylesheet" type="text" href="/bootstrap/css/bootstrap.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+    body
+        .page
+            .container
+                .row
+
+                    .col-6.offset-3
+                        .form-container(style="border: 2px solid grey")
+                            form(action="" name="contactForm")
+                                .logo
+                                    .container
+                                        .row
+                                            .col-3
+                                                img(src="/img/full-coat.png", alt="" style="width:30vw")
+                                        .row
+                                            .col.offset-3
+                                                h4 Ministry of health
+                                        .row.no-gutters
+                                            .col.offset-1
+                                                h2 COVID 19(CORONA VIRUS)
+                                        .row
+                                            .col.offset-2
+                                                h4 Virus-Test Registration Form
+                                .form
+                                    form(action="" onsubmit="validateForm()")
+                                        .container
+                                            .row
+                                                .col-6
+                                                    label(for="surname") Surname
+                                                    br
+                                                    input(type="text" name="surname")
+                                                    <div class="error" id="surnameErr"></div> 
+                                                    br
+                                                    label(for="dob") Date of Birth
+                                                    br
+                                                    input(type="date" name="dob")
+                                                    <div class="error" id="dateErr"></div>
+                                                    br
+                                                    label(for="occupation") Occupation
+                                                    br
+                                                    input(type="text" name="occupation")
+                                                    <div class="error" id="occupationErr"></div>
+                                                .col-6
+                                                    label(for="given_name") Given Name
+                                                    br
+                                                    input(type="text" name="given_name")
+                                                    <div class="error" id="given_nameErr"></div>
+                                                    br
+                                                    label(for="residence") Place of residence
+                                                    br
+                                                    input(type="text" name="residence")
+                                                    <div class="error" id="residenceErr"></div>
+                                                    br
+                                                    label(for="nationality") Nationality
+                                                    br
+                                                    input(type="text" name="nationality")
+                                                    <div class="error" id="nationalityErr"></div>
+                                                    
+
+                                            .row
+                                                .col-12
+                                                    label(for="") Gender
+                                                    hr
+                                                    .row
+                                                        .col-6
+                                                            label.form-check.form-check-inline
+                                                                input.form-check-input(type="radio" name="gender" value="female")
+                                                                span.form-check-label Female 
+                                                        .col-6
+                                                            label.form-check.form-check-inline
+                                                                input.form-check-input(type="radio" name="gender" value="male")
+                                                                span.form-check-label Male 
+
+
+                                            .row
+                                                .col-12
+                                                    label(for="category") Category
+                                                    input(type="text" name="category")
+                                                    <div class="error" id="categoryErr"></div>
+                                            .row
+                                                .col-4.offset-8
+                                                    .form-row
+                                                        div.col.form-group
+                                                            button.btn.btn-primary.btn-block Register
+    script(src="validate.js")
